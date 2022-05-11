@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block content %}
+
+    <div class="container mb-3 mt-3 text-center">
+        <p class="display-4" style="font-style:italic;">My articles</p>
+    </div>
+    <div class="container mb-3 mt-3">
+        {% for article in articles %}
+        <div class="row d-flex justify-content-center ">
+            <strong>Title:</strong>&nbsp;<a href="{{ article.pk }}">{{article.title}}</a>&nbsp;&nbsp;&nbsp;
+            <strong>Created:</strong>&nbsp;{{article.created |date:"Y-m-d "}}&nbsp;
+        </div>
+        {% endfor %}
+
+            <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Back</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} from {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Forward</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}

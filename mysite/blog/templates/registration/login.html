@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+  {% if form.errors %}
+    <p>Authentication error</p>
+  {% endif %}
+
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>You don't have access, you need to Log in</p>
+    {% endif %}
+  {% endif %}
+
+  <form method="POST" class="container d-flex flex-column justify-content-center" style="max-width:500px; height:80vh">
+    {% csrf_token %}
+    <input type="text" class="form-control my-1" name="username" id="inputEmail" placeholder="Username" required >
+    <input type="password" class="form-control my-1" name="password" id="inputPass" placeholder="Password" required>
+    <button type="submit" class="btn btn-grad my-3" style="max-width:200px; margin:0 auto;">Login</button>
+    <a class="text-danger my-3 reset" href="{% url 'password_reset' %}" style="max-width:130px">Reset Password?</a>
+  </form>
+
+
+{% endblock %}

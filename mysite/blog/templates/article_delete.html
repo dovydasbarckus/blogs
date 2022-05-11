@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container d-flex justify-content-center" style="max-width:500px; height:80vh">
+    <form method="POST" >
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Do you really want to delete this item?</legend>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">Yes, Delete!</button>
+            <button class="btn btn-outline-success" onclick="javascript:history.back();">Cancel</button>
+        </div>
+    </form>
+    </div>
+{% endblock content %}
