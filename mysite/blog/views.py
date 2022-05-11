@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 from django.views.generic.edit import FormMixin
 from .forms import ArticleCommentForm, UserUpdateForm
+from django.utils.translation import gettext as _
 
 
 from .models import Article, ArticleComment
@@ -147,24 +148,24 @@ def register(request):
         username = request.POST['username']
         email = request.POST['email']
         if username == "" or email == "":
-            messages.error(request, f" You left empty fields!")
+            messages.error(request, _(f" You left empty fields!"))
             return redirect('register')
         password = request.POST['password']
         password2 = request.POST['password2']
         if password == password2:
             if User.objects.filter(username=username).exists():
-                messages.error(request, f" User's name {username} have been taken already!")
+                messages.error(request, _(f" User's name {username} have been taken already!"))
                 return redirect('register')
             else:
                 if User.objects.filter(email=email).exists():
-                    messages.error(request, f'User with email {email} have been taken already!')
+                    messages.error(request, _(f'User with email {email} have been taken already!'))
                     return redirect('register')
                 else:
                     User.objects.create_user(username=username, email=email, password=password)
-                    messages.success(request, f'New user have been created, you can log in.')
+                    messages.success(request, _(f'New user have been created, you can log in.'))
                     return redirect('register')
         else:
-            messages.error(request, 'Password do not match!')
+            messages.error(request, _('Password do not match!'))
             return redirect('register')
     return render(request, 'registration/register.html')
 
@@ -175,10 +176,10 @@ def profile(request):
         u_form = UserUpdateForm(request.POST, instance=request.user)
         if u_form.is_valid():
             u_form.save()
-            messages.success(request, f"Profile saved")
+            messages.success(request, _(f"Profile saved"))
             return redirect('profile')
         else:
-            messages.error(request, f"Error acquired")
+            messages.error(request, _(f"Error acquired"))
     else:
         u_form = UserUpdateForm(instance=request.user)
     context = {
