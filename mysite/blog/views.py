@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
@@ -5,8 +6,8 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 from django.views.generic.edit import FormMixin
-from .forms import ArticleCommentForm
-from django.shortcuts import render, get_object_or_404
+from .forms import ArticleCommentForm, UserUpdateForm
+
 
 from .models import Article, ArticleComment
 from django.views.generic import (
@@ -140,7 +141,6 @@ class ArticleCommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteVi
         return self.request.user == articleComment.reviewer
 
 
-
 @csrf_protect
 def register(request):
     if request.method == "POST":
@@ -167,3 +167,21 @@ def register(request):
             messages.error(request, 'Password do not match!')
             return redirect('register')
     return render(request, 'registration/register.html')
+
+
+@login_required
+def profile(request):
+    if request.method == "POST":
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        if u_form.is_valid():
+            u_form.save()
+            messages.success(request, f"Profile saved")
+            return redirect('profile')
+        else:
+            messages.error(request, f"Error acquired")
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+    context = {
+        'u_form': u_form,
+    }
+    return render(request, 'profile.html', context)
