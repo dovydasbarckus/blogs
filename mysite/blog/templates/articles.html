@@ -10,9 +10,12 @@
     <div class="container mb-3 mt-3">
         {% for article in articles %}
         <div class="row d-flex justify-content-center ">
-            <strong>Title:</strong>&nbsp;<a href="{{ article.pk }}">{{article.title}}</a>&nbsp;&nbsp;&nbsp;
+            <strong>Title:</strong>&nbsp;{{article.title}}&nbsp;&nbsp;&nbsp;
             <strong>Created:</strong>&nbsp;{{article.created |date:"Y-m-d "}}&nbsp;
-            <strong>By user:</strong>&nbsp;{{article.user}}
+            <strong>By:</strong>&nbsp;{{article.user}}&nbsp;
+            <strong>Comment count:</strong>&nbsp;{{article.total_sum}}
+            <p>{{article.sentence | safe}}</p>&nbsp;
+            <a href="{{ article.pk }}">Read More</a>
         </div>
         {% endfor %}
 

@@ -13,6 +13,17 @@ class Article(models.Model):
         verbose_name = "Article"
         verbose_name_plural = "Articles"
 
+    @property
+    def total_sum(self):
+        comments = ArticleComment.objects.filter(article_id=self.id)
+        return len(comments)
+
+    @property
+    def sentence(self):
+        words = self.content[:120]
+        words += "..."
+        return words
+
 
 class ArticleComment(models.Model):
     article = models.ForeignKey('Article', on_delete=models.SET_NULL, null=True, blank=True,

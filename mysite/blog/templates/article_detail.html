@@ -22,8 +22,9 @@
   </div>
   {% endif %}
 
-
+    {% if comments %}
     <h4>Comments:</h4>
+    {% endif %}
     {% for comment in comments %}
       <p>{{ comment.reviewer }}, {{ comment.created }}</p>
       <p>{{ comment.comment }}</p>
