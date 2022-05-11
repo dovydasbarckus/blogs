@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-11 20:41+0300\n"
+"PO-Revision-Date: 2022-05-11 20:40+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: .\models.py:8 .\templates\articles.html:13 .\templates\my_articles.html:13
+msgid "Title"
+msgstr "Pavadinimas"
+
+#: .\models.py:11
+msgid "Content"
+msgstr "Turinys"
+
+#: .\models.py:14 .\templates\article_detail.html:3
+#: .\templates\my_article_detail.html:3
+msgid "Article"
+msgstr "Straipsnis"
+
+#: .\models.py:15 .\templates\articles.html:3 .\templates\articles.html:8
+#: .\templates\base.html:34 .\templates\my_articles.html:3
+msgid "Articles"
+msgstr "Straipsniai"
+
+#: .\models.py:34 .\models.py:37
+msgid "Comment"
+msgstr "Komentaras"
+
+#: .\models.py:38 .\templates\article_detail.html:26
+msgid "Comments"
+msgstr "Komentarai"
+
+#: .\templates\article_add.html:5
+msgid "New Article"
+msgstr "Naujas Straipsnis"
+
+#: .\templates\article_add.html:8 .\templates\base.html:38
+msgid "Add article"
+msgstr "Pridėti straipsnį"
+
+#: .\templates\article_add.html:14 .\templates\article_detail.html:20
+#: .\templates\article_update.html:14 .\templates\comments_update.html:14
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: .\templates\article_add.html:15 .\templates\article_delete.html:13
+#: .\templates\article_update.html:15 .\templates\comments_delete.html:13
+#: .\templates\comments_update.html:15 .\templates\my_article_detail.html:12
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: .\templates\article_delete.html:3 .\templates\article_detail.html:33
+#: .\templates\comments_delete.html:3 .\templates\my_article_detail.html:13
+msgid "Delete"
+msgstr "Ištrinti"
+
+#: .\templates\article_delete.html:9 .\templates\comments_delete.html:9
+msgid "Do you really want to delete this item"
+msgstr "Ar tikrai norite ištrintį šį įrašą"
+
+#: .\templates\article_delete.html:12 .\templates\comments_delete.html:12
+msgid "Yes, Delete"
+msgstr "Taip, ištrinti"
+
+#: .\templates\article_detail.html:8 .\templates\articles.html:14
+#: .\templates\my_article_detail.html:8 .\templates\my_articles.html:14
+msgid "Created"
+msgstr "Sukurta"
+
+#: .\templates\article_detail.html:9
+msgid "By user"
+msgstr "Vartotojo"
+
+#: .\templates\article_detail.html:16
+msgid "Leave comment"
+msgstr "Palikite komentarą"
+
+#: .\templates\article_detail.html:32 .\templates\article_update.html:5
+#: .\templates\comments_update.html:5 .\templates\my_article_detail.html:11
+#: .\templates\profile.html:22
+msgid "Update"
+msgstr "Atnaujinti"
+
+#: .\templates\article_update.html:8 .\templates\comments_update.html:8
+msgid "Update Article"
+msgstr "Atnaujinti straipsnį"
+
+#: .\templates\articles.html:15 .\templates\my_articles.html:15
+msgid "By"
+msgstr "Autorius"
+
+#: .\templates\articles.html:16
+msgid "Comment Count"
+msgstr "Komentarų skaičius"
+
+#: .\templates\articles.html:18 .\templates\my_articles.html:18
+msgid "Read More"
+msgstr "Plačiau"
+
+#: .\templates\articles.html:25 .\templates\my_articles.html:25
+msgid "First"
+msgstr "Pirmas"
+
+#: .\templates\articles.html:26 .\templates\my_articles.html:26
+msgid "Back"
+msgstr "Atgal"
+
+#: .\templates\articles.html:30 .\templates\my_articles.html:30
+msgid "Page"
+msgstr "Puslapis"
+
+#: .\templates\articles.html:30 .\templates\my_articles.html:30
+msgid "From"
+msgstr "Iš"
+
+#: .\templates\articles.html:34 .\templates\my_articles.html:34
+msgid "Forward"
+msgstr "Pirmyn"
+
+#: .\templates\articles.html:35 .\templates\my_articles.html:35
+msgid "Last"
+msgstr "Paskutinis"
+
+#: .\templates\base.html:37 .\templates\my_articles.html:8
+msgid "My articles"
+msgstr "Mano Straipsniai"
+
+#: .\templates\base.html:39
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: .\templates\base.html:47 .\templates\registration\login.html:20
+msgid "Login"
+msgstr "Prisijungimas"
+
+#: .\templates\base.html:48 .\templates\registration\register.html:15
+msgid "Registration"
+msgstr "Registracija"
+
+#: .\templates\my_article_detail.html:7
+msgid "My article"
+msgstr "Mano straipsnis"
+
+#: .\templates\my_articles.html:16
+msgid "Comment count"
+msgstr "Komentarų skaičius"
+
+#: .\templates\profile.html:4
+msgid "Profile"
+msgstr "Profilis"
+
+#: .\templates\profile.html:18
+msgid "Profile fields"
+msgstr "Profilio laukai"
+
+#: .\templates\registration\logged_out.html:3
+msgid "Logged Out"
+msgstr "Atsijungti"
+
+#: .\templates\registration\logged_out.html:6
+msgid "You have successfully logged out"
+msgstr "Jūs sėkmingai atsijungėte"
+
+#: .\templates\registration\logged_out.html:7
+msgid "Log in Again"
+msgstr "Prisijungti iš naujo"
+
+#: .\templates\registration\login.html:3
+#: .\templates\registration\register.html:39
+msgid "Log In"
+msgstr "Prisijungti"
+
+#: .\templates\registration\login.html:7
+msgid "Authentication error"
+msgstr "Autentifikacijos klaida"
+
+#: .\templates\registration\login.html:12
+msgid "You don't have access, you need to Log in"
+msgstr "Jūs neturite leidimo, jūs turite prisijungti"
+
+#: .\templates\registration\login.html:18
+msgid "Username"
+msgstr "Vartotojas"
+
+#: .\templates\registration\login.html:19
+#: .\templates\registration\register.html:29
+msgid "Password"
+msgstr "Slaptažodis"
+
+#: .\templates\registration\login.html:21
+msgid "Reset Password"
+msgstr "Slaptažodžio atnaujinimas"
+
+#: .\templates\registration\password_reset_complete.html:3
+msgid "Completed"
+msgstr "Baigta"
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "Password have been changed"
+msgstr "Slaptažodis buvo pakeistas"
+
+#: .\templates\registration\password_reset_complete.html:7
+msgid "Log In again"
+msgstr "Prisijungti iš naujo"
+
+#: .\templates\registration\password_reset_confirm.html:3
+#: .\templates\registration\password_reset_confirm.html:26
+msgid "Confirm"
+msgstr "Patvirtinti"
+
+#: .\templates\registration\password_reset_confirm.html:8
+msgid "Enter new password two times"
+msgstr "Įveskite slaptažodį du kartus"
+
+#: .\templates\registration\password_reset_confirm.html:16
+msgid "New password"
+msgstr "Naujas Slaptažodis"
+
+#: .\templates\registration\password_reset_confirm.html:21
+msgid "Repeat password"
+msgstr "Pakartokite Slaptažodį"
+
+#: .\templates\registration\password_reset_confirm.html:31
+msgid "Failed to change password"
+msgstr "Nepavyko pakeisti slaptažodį"
+
+#: .\templates\registration\password_reset_confirm.html:32
+msgid ""
+"Password link have been expired, initiate new password changing link again"
+msgstr "Slaptažodžio linkas ne be aktyvus, išsiųskite linką dar kartą"
+
+#: .\templates\registration\password_reset_done.html:3
+msgid "Done"
+msgstr "Atlikta"
+
+#: .\templates\registration\password_reset_done.html:6
+msgid "We sent password change link in your email, please check."
+msgstr ""
+"Mes išsiuntėme jums slaptažodžio pakeitimo linką, pasitikrinkite paštą."
+
+#: .\templates\registration\password_reset_form.html:3
+msgid "Reset"
+msgstr "Atnaujinti"
+
+#: .\templates\registration\password_reset_form.html:10
+msgid "Enter you email"
+msgstr "Įveskite e.mail adresą"
+
+#: .\templates\registration\password_reset_form.html:12
+msgid "Reset password"
+msgstr "Atnaujinti"
+
+#: .\templates\registration\register.html:3
+#: .\templates\registration\register.html:37
+msgid "Register"
+msgstr "Registruotis"
+
+#: .\templates\registration\register.html:19
+msgid "User's name"
+msgstr "Vartotojo vardas"
+
+#: .\templates\registration\register.html:21
+msgid "Until 150 symbols."
+msgstr "Iki 150 simbolių."
+
+#: .\templates\registration\register.html:24
+msgid "Email"
+msgstr "Elektroninis paštas"
+
+#: .\templates\registration\register.html:26
+msgid "It is needed only for creating new account"
+msgstr "Tai reikalinga tik naujo vartotojo sukūrimui"
+
+#: .\templates\registration\register.html:31
+msgid "Not less 8 symbols, can't be only numbers"
+msgstr "Ne mažiau, kaip 8 simboliai, ir negali būti visi tik skaičiai"
+
+#: .\templates\registration\register.html:34
+msgid "Repeat Password"
+msgstr "Pakartokite slaptažodį"
+
+#: .\templates\registration\register.html:39
+msgid "If you were registered before, you can"
+msgstr "Jeigu jūs esate prisiregistravęs ankščiau, jūs galite"
+
+#: .\views.py:151
+msgid " You left empty fields!"
+msgstr " Palikote tuščius laukus!"
+
+#: .\views.py:157
+#, python-brace-format
+msgid " User's name {username} have been taken already!"
+msgstr " Vartotojo vardas {username} jau užimtas!"
+
+#: .\views.py:161
+#, python-brace-format
+msgid "User with email {email} have been taken already!"
+msgstr "Vartotojas su tokiu e.mail {email} jau yra užimtas!"
+
+#: .\views.py:165
+msgid "New user have been created, you can log in."
+msgstr "Naujas vartotojas sukurtas, galite prisijungti."
+
+#: .\views.py:168
+msgid "Password do not match!"
+msgstr "Įvesti slaptažodžiai nesutampa!"
+
+#: .\views.py:179
+msgid "Profile saved"
+msgstr "Profilis buvo atnaujintas"
+
+#: .\views.py:182
+msgid "Error acquired"
+msgstr "Klaida"
+
+#~ msgid "created"
+#~ msgstr "Sukurta"
+
+#~ msgid "comment"
+#~ msgstr "Komentaras"
+
+#~ msgid "email"
+#~ msgstr "Elektroninis paštas"
+
+#, fuzzy
+#~| msgid "Username"
+#~ msgid "User"
+#~ msgstr "Vartotojas"
