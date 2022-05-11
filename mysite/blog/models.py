@@ -36,3 +36,7 @@ class ArticleComment(models.Model):
         verbose_name = "Comment"
         verbose_name_plural = "Comments"
 
+    def __str__(self):
+        return f'{self.reviewer} {self.comment}'
+
+

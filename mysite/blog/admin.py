@@ -9,9 +9,14 @@ class CommentInline(admin.TabularInline):
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'user', 'created', 'content')
-    # list_editable = ('user', 'content')
+    list_editable = ('user',)
     inlines = [CommentInline]
 
 
+class ArticleCommentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'reviewer', 'created', 'comment')
+    list_editable = ('reviewer', 'comment')
+
+
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(ArticleComment)
+admin.site.register(ArticleComment, ArticleCommentAdmin)
