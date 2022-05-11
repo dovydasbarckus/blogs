@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-{% block title %}Articles{% endblock %}
+{% block title %}{% trans 'Articles' %}{% endblock %}
 
 {% block content %}
 
 <div class="container mb-3 mt-3 text-center">
-        <p class="display-4" style="font-style:italic;">Articles</p>
+        <p class="display-4" style="font-style:italic;">{% trans 'Articles' %}</p>
     </div>
     <div class="container mb-3 mt-3">
         {% for article in articles %}
@@ -20,7 +19,7 @@
         </div>
         {% endfor %}
 
-            <div class="pagination">
+        <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
                 <a href="?page=1">&laquo; {% trans 'First' %}</a>
@@ -28,7 +27,7 @@
             {% endif %}
 
             <span class="current">
-                Page {{ page_obj.number }} {% trans 'From' %} {{ page_obj.paginator.num_pages }}
+                {% trans 'Page' %} {{ page_obj.number }} {% trans 'From' %} {{ page_obj.paginator.num_pages }}
             </span>
 
             {% if page_obj.has_next %}

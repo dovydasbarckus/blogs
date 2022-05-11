@@ -1,38 +1,38 @@
 {% extends "base.html" %}
-
-{% block title %}Articles{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Articles' %}{% endblock %}
 
 {% block content %}
 
     <div class="container mb-3 mt-3 text-center">
-        <p class="display-4" style="font-style:italic;">My articles</p>
+        <p class="display-4" style="font-style:italic;">{% trans 'My articles' %}</p>
     </div>
     <div class="container mb-3 mt-3">
         {% for article in articles %}
        <div class="row d-flex justify-content-center ">
-            <strong>Title:</strong>&nbsp;{{article.title}}&nbsp;&nbsp;&nbsp;
-            <strong>Created:</strong>&nbsp;{{article.created |date:"Y-m-d "}}&nbsp;
-            <strong>By:</strong>&nbsp;{{article.user}}&nbsp;
-            <strong>Comment count:</strong>&nbsp;{{article.total_sum}}
+            <strong>{% trans 'Title' %}:</strong>&nbsp;{{article.title}}&nbsp;&nbsp;&nbsp;
+            <strong>{% trans 'Created' %}:</strong>&nbsp;{{article.created |date:"Y-m-d "}}&nbsp;
+            <strong>{% trans 'By' %}:</strong>&nbsp;{{article.user}}&nbsp;
+            <strong>{% trans 'Comment count' %}:</strong>&nbsp;{{article.total_sum}}
             <p>{{article.sentence | safe}}</p>&nbsp;
-            <a href="{{ article.pk }}">Read More</a>
+            <a href="{{ article.pk }}">{% trans 'Read More' %}</a>
         </div>
         {% endfor %}
 
-            <div class="pagination">
+        <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; First</a>
-                <a href="?page={{ page_obj.previous_page_number }}">Back</a>
+                <a href="?page=1">&laquo; {% trans 'First' %}</a>
+                <a href="?page={{ page_obj.previous_page_number }}">{% trans 'Back' %}</a>
             {% endif %}
 
             <span class="current">
-                Page {{ page_obj.number }} from {{ page_obj.paginator.num_pages }}
+                {% trans 'Page' %} {{ page_obj.number }} {% trans 'From' %} {{ page_obj.paginator.num_pages }}
             </span>
 
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">Forward</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                <a href="?page={{ page_obj.next_page_number }}">{% trans 'Forward' %}</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last' %} &raquo;</a>
             {% endif %}
         </span>
     </div>

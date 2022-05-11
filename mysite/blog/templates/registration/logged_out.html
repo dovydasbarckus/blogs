@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-{% block title %}Logged Out{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Logged Out' %}{% endblock %}
 {% block content %}
   <div  class="container d-flex flex-column justify-content-center">
-    <h3 class="text-center">You have successfully logged out!</h3>
-    <a href="{% url 'login'%}" class="btn btn-grad my-3" style="max-width:300px; margin:0 auto;">Log in in Again?...</a>
+    <h3 class="text-center">{% trans 'You have successfully logged out' %}!</h3>
+    <a href="{% url 'login'%}" class="btn btn-grad my-3" style="max-width:300px; margin:0 auto;">{% trans 'Log in Again' %}?...</a>
   </div>
 {% endblock %}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load i18n %}
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
@@ -30,12 +31,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'articles' %}">Articles</a>
+                    <a class="nav-link" href="{% url 'articles' %}">{% trans 'Articles' %}</a>
                 </li>
           {% if user.is_authenticated %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'my_articles' %}">My articles</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'article_create' %}">Add article</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'my_articles' %}">{% trans 'My articles' %}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'article_create' %}">{% trans 'Add article' %}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">{% trans 'Logout' %} </a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">
                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
@@ -43,13 +44,31 @@
                  </svg>
             {{ user.get_username }}</a></li>
           {% else %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'register'%}">Registration</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">{% trans 'Login' %}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'register'%}">{% trans 'Registration' %}</a></li>
           {% endif %}
+            <li class="nav-item">
+                {% load i18n %}
+                  <form action="{% url 'set_language' %}" method="post" class="nav-link">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                    <select name="language" onchange="this.form.submit()">
+                      {% load static %}
+                      {% get_current_language as LANGUAGE_CODE %}
+                      {% get_available_languages as LANGUAGES %}
+                      {% for lang in LANGUAGES %}
+                      <option style="background-image: url({% static 'img/lt.png' %});" value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected" {% endif %}>
+                        {{ lang.1 }}
+                      </option>
+                      {% endfor %}
+                    </select>
+                  </form>
+            </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <div class="container">
     {% block content %}{% endblock %}
